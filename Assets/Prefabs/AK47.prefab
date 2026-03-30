@@ -336,6 +336,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _weaponName: 0
   _damage: 10
+  _maxMagazineCapacity: 30
+  _maxBulletsInInventory: 90
   _test: {fileID: 2041528384270458387, guid: 4575badaeffeef0489b4b51819540dfa, type: 3}
 --- !u!1 &8622993002829685117
 GameObject:
