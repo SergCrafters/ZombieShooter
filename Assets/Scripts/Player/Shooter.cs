@@ -10,6 +10,9 @@ public class Shooter : MonoBehaviour
 
     private Weapon _currentWeapon;
 
+    public event Action Shot;
+    public event Action Reloaded;
+
     private void OnEnable()
     {
         _inputReader.Shot += Shoot;
@@ -32,12 +35,16 @@ public class Shooter : MonoBehaviour
 
     private void Shoot()
     {
-        _currentWeapon.Shot(_camera);
+        if (_currentWeapon.TryShot(_camera))
+        {
+            Shot?.Invoke();
+        }
     }
 
     private void Reload()
     {
         _currentWeapon.Reload();
+        Reloaded?.Invoke();
     }
 
     private void SwitchWeapon(int weaponNumber)

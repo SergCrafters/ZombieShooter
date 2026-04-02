@@ -40,14 +40,6 @@ public class InputReader : MonoBehaviour
             }
         }
 
-        foreach (KeyCode key in _shootKeys)
-        {
-            if (Input.GetKeyDown(key))
-            {
-                Shot?.Invoke();
-            }
-        }
-
         foreach (KeyCode key in _firstWeaponKeys)
         {
             if (Input.GetKeyDown(key))
@@ -69,6 +61,17 @@ public class InputReader : MonoBehaviour
             if (Input.GetKeyDown(key))
             {
                 Reloaded?.Invoke();
+            }
+        }
+    }
+
+    private void LateUpdate()
+    {
+        foreach (KeyCode key in _shootKeys)
+        {
+            if (Input.GetKeyDown(key))
+            {
+                Shot?.Invoke();
             }
         }
     }

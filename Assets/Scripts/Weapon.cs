@@ -21,7 +21,7 @@ public class Weapon : MonoBehaviour
     }
 
 
-    public void Shot(Camera camera)
+    public bool TryShot(Camera camera)
     {
         if (_bulletsInMagazine > 0)
         {
@@ -36,7 +36,9 @@ public class Weapon : MonoBehaviour
                 Instantiate(_test, hit.point, Quaternion.identity);
             }
             _bulletsInMagazine--;
+            return true;
         }
+        return false;
     }
 
     public void Reload()

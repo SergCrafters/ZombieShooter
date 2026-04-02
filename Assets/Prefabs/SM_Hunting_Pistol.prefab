@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3111634610607361097}
   - component: {fileID: 7105427033006377222}
   - component: {fileID: 6432400279982986460}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Trigger_For_Hunting_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,9 +117,8 @@ GameObject:
   - component: {fileID: 1212430490203421118}
   - component: {fileID: 8143754779637960033}
   - component: {fileID: 1276197163756805518}
-  - component: {fileID: 4876624934962971483}
   - component: {fileID: 5330083493256761262}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Hunting_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -193,28 +192,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &4876624934962971483
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4549967037828289782}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 8828253542853537200, guid: e3aa362549367b540afb92e91ac2e0e8, type: 3}
 --- !u!114 &5330083493256761262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,7 +221,7 @@ GameObject:
   - component: {fileID: 7932970217544430677}
   - component: {fileID: 317149535193639634}
   - component: {fileID: 4265956771976445370}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Fuse_For_Hunting_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +327,7 @@ GameObject:
   - component: {fileID: 6384084976215789286}
   - component: {fileID: 3130162293425898819}
   - component: {fileID: 1901774449837113181}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Trigger_Hook_For_Hunting_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -456,7 +433,7 @@ GameObject:
   - component: {fileID: 3556363470647295617}
   - component: {fileID: 858968872048275688}
   - component: {fileID: 4602090887879157579}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Bolt_For_Hunting_Pistol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
