@@ -14,6 +14,9 @@ public class Weapon : MonoBehaviour
     private int _bulletsInMagazine = 0;
     private int _bulletsInInventory = 0;
 
+    public event Action Shot;
+    public event Action Reloaded;
+
     private void Start()
     {
         _bulletsInMagazine = _maxMagazineCapacity;
@@ -36,6 +39,8 @@ public class Weapon : MonoBehaviour
                 Instantiate(_test, hit.point, Quaternion.identity);
             }
             _bulletsInMagazine--;
+            Shot?.Invoke();
+
             return true;
         }
         return false;
@@ -56,6 +61,7 @@ public class Weapon : MonoBehaviour
         }
 
         _bulletsInMagazine += bulletToLoad;
+        Reloaded?.Invoke();
     }
 }
 
