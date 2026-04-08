@@ -444,6 +444,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _weaponName: 0
+  _bloodEffect: {fileID: 5538887981943469400, guid: a660ef057a8063e4bbd5563b5617e45e, type: 3}
   _damage: 10
   _maxMagazineCapacity: 30
   _maxBulletsInInventory: 90

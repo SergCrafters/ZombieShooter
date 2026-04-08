@@ -6,6 +6,7 @@ public class Weapon : MonoBehaviour
     private readonly Vector2 _screenShotPercent = new Vector2(0.5f, 0.5f);
 
     [SerializeField] private WeaponName _weaponName;
+    [SerializeField] private ParticleSystem _bloodEffect; 
     [SerializeField] private float _damage;
     [SerializeField] private int _maxMagazineCapacity;
     [SerializeField] private int _maxBulletsInInventory;
@@ -35,6 +36,8 @@ public class Weapon : MonoBehaviour
                 if(hit.collider.TryGetComponent(out EnemyHealth enemy))
                 {
                     enemy.TakeDamage(_damage);
+                    ParticleSystem effect = Instantiate(_bloodEffect, hit.point, Quaternion.identity);
+                    effect.transform.right = hit.normal;
                 }
                 Instantiate(_test, hit.point, Quaternion.identity);
             }

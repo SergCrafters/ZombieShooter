@@ -9,6 +9,9 @@ public class EnemyMover : MonoBehaviour
     [SerializeField] private bool _randomPatrol = false;
     [SerializeField] private List<Transform> _points;
     [SerializeField] private PlayerMover _player;
+    [SerializeField] private EnemyAnimationEventHandler _animationEvents;
+    [SerializeField] private EnemyHealth _health;
+    [SerializeField] private EnemyAttacker _attacker;
     [SerializeField] private float _playerNoticeDistance;
     [SerializeField] private float _viewAngle;
 
@@ -19,6 +22,15 @@ public class EnemyMover : MonoBehaviour
     {
         _agent = GetComponent<NavMeshAgent>();
     }
+
+    private void OnEnable()
+    {
+        _health.TookDamage += StopMoving;
+        _animationEvents.HitAnimationEnded += ContinueMoving;
+        _animationEvents.AttackEnded += ContinueMoving;
+        _attacker.Attaking += StopMoving;
+    }
+
 
     private void Start()
     {
@@ -40,6 +52,14 @@ public class EnemyMover : MonoBehaviour
         }
 
     }
+ 
+    private void OnDisable()
+    {
+        _health.TookDamage -= StopMoving;
+        _animationEvents.HitAnimationEnded -= ContinueMoving;
+        _animationEvents.AttackEnded -= ContinueMoving;
+        _attacker.Attaking -= StopMoving;
+    }
 
     private void PickNewPatrolPoint()
     {
@@ -56,7 +76,7 @@ public class EnemyMover : MonoBehaviour
 
     private void ChasePlayer()
     {
-        _agent.SetDestination(_player.transform.position);
+            _agent.SetDestination(_player.transform.position);
     }
 
     private bool TrySeePlayer()
@@ -76,5 +96,15 @@ public class EnemyMover : MonoBehaviour
         }
 
         return false;
+    }
+
+    private void StopMoving()
+    {
+        _agent.isStopped = true;
+    }
+
+    private void ContinueMoving()
+    {
+        _agent.isStopped = false;
     }
 }
